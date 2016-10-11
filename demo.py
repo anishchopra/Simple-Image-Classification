@@ -7,6 +7,31 @@ from keras.models import load_model
 import os
 from shutil import copy
 
+"""
+This is an example of how to use this tool.
+
+Notice that since we are using a pre-trained model, only 42 images were used
+for each category, with great results!
+
+Look at the "demo_test_images_predictions" folder to see the results of this
+classifier on unlabelled images.
+"""
+
+
+"""
+images_dir should be a folder that is organized as such:
+
+images_dir:
+	class_0:
+		img_0
+		img_1
+		...
+	class_1:
+		img_0
+		img_1
+		...
+	...
+"""
 images_dir = 'demo_images/'
 test_images_dir = 'unlabelled_demo_images/'
 test_images_predictions_dir = 'demo_test_images_predictions'
