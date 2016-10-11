@@ -12,7 +12,7 @@ In the example provided, only 42 images were used for each category, including t
 ## Usage
 Use generate_inception_features.py to generate the features computed using the Inception V3 pre-trained model.
 
-Use train_nn.py to train a one-layer neural network classifier, which takes in an Inception feature as input.
+Use train_nn.py to train a one-layer neural network classifier, which takes in Inception V3 features as input.
 
 Use run_classifier.py to run your newly-trained classifier on a new image.
 
