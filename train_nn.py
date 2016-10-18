@@ -70,8 +70,8 @@ def train_nn(features_file, model_file, val_split=0.8, nb_epochs=50, optimizer='
 	train_x = x[:cutoff]
 	train_y = y[:cutoff]
 
-	val_x = x[:cutoff]
-	val_y = y[:cutoff]
+	val_x = x[cutoff:]
+	val_y = y[cutoff:]
 
 	print "Finished loading training data"
 
