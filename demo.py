@@ -22,15 +22,15 @@ classifier on unlabelled images.
 images_dir should be a folder that is organized as such:
 
 images_dir:
-	class_0:
-		img_0
-		img_1
-		...
-	class_1:
-		img_0
-		img_1
-		...
-	...
+    class_0:
+        img_0
+        img_1
+        ...
+    class_1:
+        img_0
+        img_1
+        ...
+    ...
 """
 images_dir = 'demo_images/'
 test_images_dir = 'unlabelled_demo_images/'
@@ -52,19 +52,19 @@ classes = get_classes(features_file)
 classifier = load_model(model_file)
 
 for img in os.listdir(test_images_dir):
-	if img[-3:].lower() != 'jpg' and img[-4:].lower() != 'jpeg':
-		continue
+    if img[-3:].lower() != 'jpg' and img[-4:].lower() != 'jpeg':
+        continue
 
-	img_path = os.path.join(test_images_dir, img)
+    img_path = os.path.join(test_images_dir, img)
 
-	# Generate the prediction for the unlabelled image
-	prediction = predict(img_path, classifier)
+    # Generate the prediction for the unlabelled image
+    prediction = predict(img_path, classifier)
 
-	label = classes[prediction]
+    label = classes[prediction]
 
-	dest = os.path.join(test_images_predictions_dir, label)
+    dest = os.path.join(test_images_predictions_dir, label)
 
-	if not os.path.isdir(dest):
-		os.mkdir(dest)
+    if not os.path.isdir(dest):
+        os.mkdir(dest)
 
-	copy(img_path, dest)
+    copy(img_path, dest)
